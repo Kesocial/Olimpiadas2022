@@ -1,0 +1,78 @@
+
+ {{>navbarLanding}}
+<main class="main landing">
+  <section id="parallax" class="main__section">
+    <div id="parallaxImg" class="main__background-parallax"></div>
+    <div class="main__content">
+      <h2 class="section__titulo -principal">
+        ¡Veni a visitarnos!
+      </h2>
+      <p class="main__content-seccion">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
+        reprehenderit ipsam deleniti, est velit dolore fugiat, minus explicabo
+        at earum doloremque eius alias quos quibusdam maiores hic possimus amet
+        soluta.
+      </p>
+        <a class="siguiente" href="#presentacion">
+         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" style="fill: var(--colorSecundario);transform: ;msFilter:;"><path d="M16.939 10.939 12 15.879l-4.939-4.94-2.122 2.122L12 20.121l7.061-7.06z"></path><path d="M16.939 3.939 12 8.879l-4.939-4.94-2.122 2.122L12 13.121l7.061-7.06z"></path></svg>
+        </a>
+    </div>
+  </section>
+  <section id="presentacion" class="presentacion main__section">
+    <div class="presentacion__sec">
+      <h2 class="section__titulo"><span class="resaltar1">¿Quienes somos?</span></h2>
+      <p class="presentacion__p">
+        
+        Con la inauguración de su flamante edificio en Plaza España, el 4 de diciembre de 1967, cambia nuevamente su
+        denominación y pasa a llamarse Museo Municipal de Ciencias Naturales “Lorenzo Scaglia”. En este nuevo espacio diseñado
+        especialmente para este uso, fue posible exponer su magnífico material paleontológico, geológico, zoológico y
+        arqueológico según las normas de la época.
+      </p>
+    </div>
+    <div class="presentacion__sec">
+      <img
+        class="presentacion__img"
+        src="img/presentacion.webp"
+        alt="Muestras"
+        srcset=""
+      />
+    </div>
+  </section>
+  <div id="tematicas" class="main__section">
+    <h2 class="section__titulo"><span class="resaltar1">¡Explora nuestras tematicas</span></h2>
+    <section class="tematicas ">
+  
+      {{#each tematicas}}
+      <div class="tematicas__tematica">
+        <div class="tematicas__contenedor-img">
+          <img class="tematicas__img" src={{dataImg}} alt="">
+        </div>
+        <h2 class=" tematicas__titulo">
+          {{titulo}}
+        </h2>
+        <div class="tematicas__content">
+          <p class="tematicas__descripcion">{{descripcion}}</p>
+          <p class="tematicas__descripcion">{{timeago fechaDeSubida}}</p>
+        </div>
+      </div>
+      {{/each}}
+    </section>
+  </div>
+ 
+  
+</main>
+<div class="acceder"> 
+   {{#isEqual logueado}}
+    <li class="seccion__boton descarga login logueado">
+      <a class="  nav__a" href="/admin/panel">Ir al panel</a>
+      <a class="  nav__a" href="/admin/logout">Cerrar sesion</a>
+    </li>
+   {{else}}
+    <a class=" seccion__boton descarga login" href="/admin/login">Acceder</a>
+   {{/isEqual}}
+   <li class=" seccion__boton descarga">
+      <a class="nav__a" href="#contacto">
+        Descargar la App
+      </a>
+    </li>
+</div>

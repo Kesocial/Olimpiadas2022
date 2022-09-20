@@ -1,0 +1,10 @@
+<form action="/api/tematicas/add" method="post">
+  <input required type="text" name="titulo" />
+  <input required type="text" name="descripcion" />
+  <input required type="date" name="fechaDeSubida" />
+  <input required type="file"  id="file-uploadImage">
+  <input type="text" hidden name="dataImg" id="dataImg"/>
+  <img id="prevImg"src="" alt="">
+  <input type="submit" value="enviar">
+</form>
+<script src="/js/file.js"></script>
