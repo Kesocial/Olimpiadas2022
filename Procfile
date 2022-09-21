@@ -1,2 +1,1 @@
-worker: npm dev
-web:
+web: npm dev
