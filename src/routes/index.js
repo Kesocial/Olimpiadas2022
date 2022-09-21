@@ -10,8 +10,10 @@ router.get("/", function(req, res) {
     request.get(`http://${process.env.DOMAIN}:${process.env.PORT}/api/tematicas`, { json: true }, (err, response, body) => {
         if (err) { return console.log(err); }
         tematicas = body;
-        res.render("landing/landing", { tematicas, logueado });
-    });
+        
+     res.render("landing/landing", {tematicas, logueado });
+       });
+    
 });
 
 module.exports = router;
