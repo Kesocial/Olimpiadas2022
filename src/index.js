@@ -62,7 +62,6 @@ passport.deserializeUser(function(id, done) {
 
 //Rutas
 app.use(require("./routes"));
-
 app.use("/admin/panel", require("./routes/admin/panel"));
 app.use("/admin/login", require("./routes/admin/login"));
 app.use("/admin/logout", require("./routes/admin/logout"));
@@ -71,7 +70,6 @@ app.use("/admin/addPunto", require("./routes/admin/addPunto"));
 app.use("/api/comentarios", require("./routes/api/comentarios"));
 app.use("/api/tematicas", require("./routes/api/tematicas"));
 app.use("/api/puntos", require("./routes/api/puntos"));
-app.use(require("./routes"));
 
 //Carpeta public    
 app.use(express.static(path.join(__dirname, "public")));

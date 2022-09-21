@@ -1,6 +1,5 @@
 const { Router } = require("express");
 const router = Router();
-const Punto = require("../models/Punto");
 const request = require('request');
 
 
