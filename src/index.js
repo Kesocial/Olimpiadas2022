@@ -19,6 +19,8 @@ const app = express();
 //Configuracion
 app.set("port", process.env.PORT || 8888);
 app.set("views", path.join(__dirname, "/views"));
+app.use(express.urlencoded({ extended: false, limit: '50mb' }));
+app.use(express.json({ limit: '50mb' }));
 
 const hbs = exphbs.create({
     defaultLayout: "main",
@@ -31,9 +33,6 @@ app.engine(".hbs", hbs.engine);
 app.set("view engine", "hbs");
 
 //Middlewares
-
-app.use(cookieParser('my secret'));
-
 app.use(session({
     secret: 'my secret',
     resave: true,
@@ -43,8 +42,6 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(express.urlencoded({ extended: false, limit: '50mb' }));
-app.use(express.json({ limit: '50mb' }));
 
 //
 
