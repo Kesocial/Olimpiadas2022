@@ -1,12 +1,12 @@
 const { Router } = require("express");
 const router = Router();
-
-router.get("/", function (req, res) {
-    if(req.isAuthenticated()) logueado = true; 
+const request = require("request");
+router.get("/", function(req, res) {
+    let logueado = false;
+    if (req.isAuthenticated()) logueado = true;
     request.get(`http://${process.env.DOMAIN}:${process.env.PORT}/api/tematicas`, { json: true }, (err, response, body) => {
         if (err) { return console.log(err); }
-        tematicas = body;
-        let logueado = false; 
+        comentarios = body;
         res.render("admin/comentarios", { comentarios });
     });
 });

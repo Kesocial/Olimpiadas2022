@@ -1,7 +1,6 @@
-const fileUploadImage = document.getElementById("file-uploadImage");
-const dataImg = document.getElementById("dataImg");
+const fileUploadImage = document.getElementById("file_input");
+const dataImg = document.getElementById("file_input");
 const prevImg = document.getElementById("prevImg");
-console.log(prevImg);
 fileUploadImage.addEventListener("change", (event) => {
     const e = event.target
     const file = e.files[0];
@@ -10,7 +9,7 @@ fileUploadImage.addEventListener("change", (event) => {
         const reader = new FileReader();
         reader.readAsDataURL(file);
         reader.onload = async() => {
-            const dataSplit = reader.result;
+            const dataSplit = await reader.result;
             data = {
                 name: file.name,
                 size: file.size,

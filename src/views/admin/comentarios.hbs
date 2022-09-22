@@ -1,3 +1,4 @@
+{{>navbarAdmin}}
 {{#each comentarios}}
       <div class="comentario">
         
@@ -10,4 +11,24 @@
           <p class="tematicas__descripcion">{{calificacion}}</p>
         </div>
       </div>
+      <div class="comment">
+		<div class="user-banner">
+			<div class="user">
+				<div class="avatar">
+					<img src="https://randomuser.me/api/portraits/men/86.jpg">
+					<span class="stat grey"></span>
+				</div>
+				<h5>Anonimo</h5>
+			</div>
+			<button class="btn dropdown"><i class="ri-more-line"></i></button>
+		</div>
+		<div class="content">
+			<p>Actually, now that I try out the links on my message, above, none of them take me to the secure site. Only my shortcut on my desktop, which I created years ago.</p>
+		</div>
+		<div class="footer">
+			<span class="is-mute">{{calificacion}}</span>
+			<div class="divider"></div>
+			<span class="is-mute">{{calificacion}}</span>
+		</div>
+	</div>
       {{/each}}

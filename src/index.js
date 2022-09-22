@@ -67,6 +67,7 @@ app.use("/admin/login", require("./routes/admin/login"));
 app.use("/admin/logout", require("./routes/admin/logout"));
 app.use("/admin/addTematica", require("./routes/admin/addTematica"));
 app.use("/admin/addPunto", require("./routes/admin/addPunto"));
+app.use("/admin/comentarios", require("./routes/admin/comentarios"));
 app.use("/api/comentarios", require("./routes/api/comentarios"));
 app.use("/api/tematicas", require("./routes/api/tematicas"));
 app.use("/api/puntos", require("./routes/api/puntos"));

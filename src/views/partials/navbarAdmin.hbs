@@ -1,29 +1,51 @@
-<nav class="flex py-5 bg-green-500 text-white px-24">
-        <div class="nav-contrast w-1/2 px-12 mr-auto">
-            <a class="nav__logo" href="/">
-    <span class="resaltar1">
-      M</span>useo<span class="resaltar1">S</span>caglia
+<nav class="nav admin">
+  <a class="nav__logo" href="/">
+    <span class="resaltar2">
+      M</span>useo<span class="resaltar2">S</span>caglia
   </a>
-        </div>
-        <ul class="w-1/2 px-16 ml-auto flex justify-end pt-1">
-            {{#if name}}
-            <li class="nav-item px-4">
-               <p class="font-semibold">{{name}}</p>
-            </li>
-            <li class="nav-item px-4">
-                <a href="/logout" class="nav-link font-semibold bg-red-500 text-white hover:bg-red py-3 px-4 rounded-md">cerrar sesión</a>
-            </li>
-            {{else}}
-            <li class="nav-item px-4">
-                <a href="/admin/addComentario" class="nav-link font-semibold border-2 border-white hover:bg-white hover:text-green-700 py-3 px-4 rounded-md">Comentarios</a>
-            </li>
-            <li class="nav-item px-4">
-                <a href="/admin/addTematica" class="nav-link font-semibold hover:bg-green-700 py-3 px-4 rounded-md">Tematicas</a>
-            </li>
-            <li class="nav-item px-4">Puntos
-                <a href="/admin/addPunto" class="nav-link font-semibold hover:bg-green-700 py-3 px-4 rounded-md"></a>
-            </li>
-            
-        {{/if}}
-        </ul>
-    </nav>
+  <ul class="nav__ul">
+    <li class="nav__li">
+     <a class="nav__a active" href="/admin/comentarios">
+        Comentarios
+      </a>
+    </li>
+    
+    <li class="nav__li">
+      <a class="nav__a" href="/admin/addTematica">
+        Tematicas
+      </a>
+    </li>
+    <li class="nav__li">
+      <a class="nav__a" href="/admin/addPunto">
+        Puntos
+      </a>
+    </li>
+  </ul>
+  <div class="menu">
+    
+    <div class="menu__toggle-button">
+      <div id="nav-icon4">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div> 
+  </div>
+<ul class="nav__ul--toggle">
+    <li class="nav__li">
+      <a class="nav__a" href="/admin/comentarios">
+        Comentarios
+      </a>
+    </li>
+    <li class="nav__li">
+      <a class="nav__a" href="/admin/addTematica">
+        Tematicas
+      </a>
+    </li>
+    <li class="nav__li">
+      <a class="nav__a" href="/admin/addPunto">
+        Puntos
+      </a>
+    </li>
+  </ul>
+</nav>

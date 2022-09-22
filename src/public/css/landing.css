@@ -2,6 +2,7 @@
 html {
     scroll-behavior: smooth;
 }
+
 * {
     line-height: 1.5;
     margin: 0;
@@ -21,6 +22,10 @@ html {
 
 .nav-contrast>.nav__logo>.resaltar1 {
     color: var(--colorSecundario);
+}
+
+.nav-contrast>.nav__logo>.resaltar2 {
+    color: var(--colorPrincipal);
 }
 
 .nav {
@@ -79,21 +84,23 @@ html {
 .nav__li:hover {
     background-color: #fcfffc2a;
 }
+
 .nav__li.active {
     background-color: #fcfffc2a;
 }
+
 .nav__a {
     text-decoration: none;
     color: var(--textColor1);
     /* color:var(--textColor2); */
     font-weight: 500;
 }
-.bg-green-500{
+
+.bg-green-500 {
     background-color: var(--colorPrincipal)!important;
 }
 
-
-.bg-green-700{
+.bg-green-700 {
     background-color: var(--colorPrincipal)!important;
 }
 
@@ -577,14 +584,103 @@ html {
     display: inline!important;
     border: none!important;
 }
-.seccion__boton.descarga.login.logueado{
+
+.seccion__boton.descarga.login.logueado {
     display: flex!important;
     place-content: space-between!important;
 }
-.logueado > .nav__a
-{
+
+.logueado>.nav__a {
     text-decoration: none;
     color: var(--textColor1);
     /* color:var(--textColor2); */
     font-weight: 500;
+}
+
+.carga-container.active {
+    display: flex;
+}
+
+.carga-container {
+    display: none;
+    position: fixed;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #fcfffca6;
+    top: 0;
+    z-index: 1000000000;
+    place-content: center;
+    place-items: center;
+}
+
+.dot-bricks {
+    position: relative;
+    top: 8px;
+    left: -9999px;
+    width: 15px;
+    height: 15px;
+    border-radius: 5px;
+    background-color: var(--colorPrincipal);
+    color: var(--colorPrincipal);
+    box-shadow: 9991px -16px 0 0 var(--colorPrincipal), 9991px 0 0 0 var(--colorPrincipal), 10007px 0 0 0 var(--colorPrincipal);
+    animation: dotBricks 2s infinite ease;
+}
+
+@keyframes dotBricks {
+    0% {
+        box-shadow: 9991px -16px 0 0 var(--colorPrincipal), 9991px 0 0 0 var(--colorPrincipal), 10007px 0 0 0 var(--colorPrincipal);
+    }
+    8.333% {
+        box-shadow: 10007px -16px 0 0 var(--colorPrincipal), 9991px 0 0 0 var(--colorPrincipal), 10007px 0 0 0 var(--colorPrincipal);
+    }
+    16.667% {
+        box-shadow: 10007px -16px 0 0 var(--colorPrincipal), 9991px -16px 0 0 var(--colorPrincipal), 10007px 0 0 0 var(--colorPrincipal);
+    }
+    25% {
+        box-shadow: 10007px -16px 0 0 var(--colorPrincipal), 9991px -16px 0 0 var(--colorPrincipal), 9991px 0 0 0 var(--colorPrincipal);
+    }
+    33.333% {
+        box-shadow: 10007px 0 0 0 var(--colorPrincipal), 9991px -16px 0 0 var(--colorPrincipal), 9991px 0 0 0 var(--colorPrincipal);
+    }
+    41.667% {
+        box-shadow: 10007px 0 0 0 var(--colorPrincipal), 10007px -16px 0 0 var(--colorPrincipal), 9991px 0 0 0 var(--colorPrincipal);
+    }
+    50% {
+        box-shadow: 10007px 0 0 0 var(--colorPrincipal), 10007px -16px 0 0 var(--colorPrincipal), 9991px -16px 0 0 var(--colorPrincipal);
+    }
+    58.333% {
+        box-shadow: 9991px 0 0 0 var(--colorPrincipal), 10007px -16px 0 0 var(--colorPrincipal), 9991px -16px 0 0 var(--colorPrincipal);
+    }
+    66.666% {
+        box-shadow: 9991px 0 0 0 var(--colorPrincipal), 10007px 0 0 0 var(--colorPrincipal), 9991px -16px 0 0 var(--colorPrincipal);
+    }
+    75% {
+        box-shadow: 9991px 0 0 0 var(--colorPrincipal), 10007px 0 0 0 var(--colorPrincipal), 10007px -16px 0 0 var(--colorPrincipal);
+    }
+    83.333% {
+        box-shadow: 9991px -16px 0 0 var(--colorPrincipal), 10007px 0 0 0 var(--colorPrincipal), 10007px -16px 0 0 var(--colorPrincipal);
+    }
+    91.667% {
+        box-shadow: 9991px -16px 0 0 var(--colorPrincipal), 9991px 0 0 0 var(--colorPrincipal), 10007px -16px 0 0 var(--colorPrincipal);
+    }
+    100% {
+        box-shadow: 9991px -16px 0 0 var(--colorPrincipal), 9991px 0 0 0 var(--colorPrincipal), 10007px 0 0 0 var(--colorPrincipal);
+    }
+}
+
+.nav.admin {
+    background-color: var(--colorPrincipal);
+}
+
+input[type="submit"] {
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--colorPrincipal);
+    color: var(--colorSecundario);
+}
+
+.form-main {
+    margin-top: 100px;
 }
