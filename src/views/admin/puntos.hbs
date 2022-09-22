@@ -3,7 +3,7 @@
     <div
         class=" add form-main block mx-auto my-12 p-8 bg-white w-1/3 border border-gray-200 rounded-lg shadow-lg text-gray-800">
         <h1 class="text-3xl font-bold text-center">Añadir Punto</h1>
-        <form action="/admin/puntos/edit" method="post" class="mt-4">
+        <form action="/admin/puntos/add" method="post" class="mt-4">
             <label for="nombre" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
                 Nombre</label>
             <input require id="nombre"
@@ -14,6 +14,7 @@
                    <select id="select" require name="orden" >
                     {{#each maxOrden}}
                         <option value="{{this}}">{{this}}</option>
+                        
                     {{/each}}
 
                    </select>
@@ -82,6 +83,13 @@
                     <a href="/admin/puntos/edit/{{{_id}}}">Editar</a>
                 </div>
             </div>
+            {{else}}
+            <div class="snippet" data-title=".dot-bricks">
+                <div class="stage">
+                    <div class="dot-bricks"></div>
+                </div>
+            </div>
+
         {{/each}}
     </section>
 </main>
