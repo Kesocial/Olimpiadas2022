@@ -9,7 +9,7 @@ router.get("/", async(req, res) => {
     })
 });
 
-router.post("/add", (req, res) => {
+router.post("/", (req, res) => {
     const { comentario, calificacion } = req.body;
     console.log(req.body);
     const newComentario = new Comentario({
@@ -21,12 +21,12 @@ router.post("/add", (req, res) => {
         .save()
         .then((result) => {
             console.log(result);
+res.json(result);
         })
         .catch((err) => {
             console.error(err);
         });
 
-    res.redirect("/admin/panel");
 });
 // post comentario
 module.exports = router;
