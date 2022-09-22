@@ -9,5 +9,6 @@ router.get("/", function(req, res) {
         comentarios = body;
         res.render("admin/comentarios", { comentarios });
     });
+    res.redirect("admin/login");
 });
 module.exports = router;

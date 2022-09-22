@@ -4,9 +4,12 @@
 
 
     <form action="/api/puntos/add" method="post" class="mt-4">
-        <input name="orden"require
+    <input  require
             class="border border-gray-200 w-full text-lg placeholder-gray-500 p-2 my-2 bg-gray-200 focus:bg-white"
-            placeholder="Orden" required type="text" name="Orden" />
+            placeholder="nombre" required type="text" name="nombre" />
+        <input require
+            class="border border-gray-200 w-full text-lg placeholder-gray-500 p-2 my-2 bg-gray-200 focus:bg-white"
+            placeholder="Orden" required type="text" name="orden" />
         <label for="message1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
             Descripcion de objeto</label>
         <textarea name="descripcionDeObjeto" id="message1" rows="4"
