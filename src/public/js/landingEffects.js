@@ -1,6 +1,7 @@
 const parallax = document.getElementById("parallax");
 const parallaxImg = document.getElementById("parallaxImg");
 const parallaxH = parallax.offsetHeight;
+const nav = document.querySelector(".nav");
 
 window.addEventListener("scroll", () => {
     if (window.scrollY >= parallax.offsetHeight - nav.offsetHeight) {

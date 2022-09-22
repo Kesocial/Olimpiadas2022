@@ -1,17 +1,16 @@
 const { Router } = require("express");
 const router = Router();
-const request = require('request');
+const { conectarDB, desconectarDB } = require("../mongoDb");
+const Tematica = require("../models/Tematica");
 
-
-router.get("/", function(req, res) {
+router.get("/", async(req, res) => {
     let logueado = false;
     if (req.isAuthenticated()) logueado = true;
-    request.get(`https://olimpiadas2022eestn5.herokuapp.com/api/tematicas`, { json: true }, (err, response, body) => {
-        if (err) { return console.log(err); }
-        tematicas = body;
-        res.render("landing/landing", { tematicas, logueado });
-    });
-
+    await Tematica.find({})
+        .exec()
+        .then((tematicas) => {
+            res.render("landing/landing", { tematicas, logueado });
+        });
 });
 
 module.exports = router;

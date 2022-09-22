@@ -1,15 +1,15 @@
-const fileUploadImage = document.getElementById("file_input");
-const dataImg = document.getElementById("file_input");
+const fileInput = document.getElementById("file_input");
+const dataImg = document.getElementById("dataImg");
 const prevImg = document.getElementById("prevImg");
-fileUploadImage.addEventListener("change", (event) => {
-    const e = event.target
-    const file = e.files[0];
-    let data = {};
-    try {
+if (fileInput) {
+    fileInput.addEventListener("change", (event) => {
+        const e = event.target
+        const file = e.files[0];
+        let data = {};
         const reader = new FileReader();
         reader.readAsDataURL(file);
-        reader.onload = async() => {
-            const dataSplit = await reader.result;
+        reader.onload = () => {
+            const dataSplit = reader.result;
             data = {
                 name: file.name,
                 size: file.size,
@@ -19,10 +19,25 @@ fileUploadImage.addEventListener("change", (event) => {
             prevImg.src = dataSplit;
             prevImg.alt = file.name;
             dataImg.value = dataSplit;
-
         };
-    } catch (err) {
-        console.log(err);
-    }
-    return data.encode;
-});
+    });
+}
+
+///Boton añadir tematica
+const btnAñadir = document.getElementById("btnAñadir");
+const formMainAdd = document.querySelector(".fondoAdd");
+const formMain = document.querySelector("body > .form-main");
+const cerrarAdd = document.getElementById("cerrarAdd");
+if (formMainAdd && btnAñadir)
+    btnAñadir.addEventListener("click", () => {
+        formMainAdd.style.display = "flex";
+        formMain.style.display = "none";
+
+    });
+
+if (formMainAdd && cerrarAdd)
+    cerrarAdd.addEventListener("click", () => {
+        formMainAdd.style.display = "none";
+        formMain.style.display = "grid";
+
+    });

@@ -39,7 +39,7 @@
     </div>
   </section>
   <div id="tematicas" class="main__section">
-    <h2 class="section__titulo"><span class="resaltar1">¡Explora nuestras tematicas</span></h2>
+    <h2 class="section__titulo"><span class="resaltar1">¡Explora nuestras tematicas!</span></h2>
     <section class="tematicas ">
   
       {{#each tematicas}}
@@ -62,18 +62,20 @@
   
 </main>
 <div class="acceder"> 
-   {{#isEqual logueado}}
+   {{#if logueado}}
     <li class="seccion__boton descarga login logueado">
       <a class="carga nav__a" href="/admin/panel">Ir al panel</a>
       <a class="carga  nav__a" href="/admin/logout">Cerrar sesion</a>
     </li>
    {{else}}
     <a class="carga seccion__boton descarga login" href="/admin/login">Acceder</a>
-   {{/isEqual}}
+   {{/if}}
    <li class=" seccion__boton descarga">
       <a class="nav__a" href="#contacto">
         Descargar la App
       </a>
     </li>
 </div>
+{{>footer}}
 <script src="/js/landingEffects.js"></script>
+<script src="/js/navEffects.js"></script>

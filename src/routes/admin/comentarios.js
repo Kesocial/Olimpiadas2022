@@ -1,14 +1,22 @@
-const { Router } = require("express");
+const { Router, response } = require("express");
 const router = Router();
-const request = require("request");
-router.get("/", function(req, res) {
-    let logueado = false;
-    if (req.isAuthenticated()) logueado = true;
-    request.get(`http://${process.env.DOMAIN}:${process.env.PORT}/api/tematicas`, { json: true }, (err, response, body) => {
-        if (err) { return console.log(err); }
-        comentarios = body;
+const Comentario = require("../../models/Comentario");
+const { conectarDB, desconectarDB } = require("../../mongoDb");
+
+router.get("/", async(req, res) => {
+    if (!req.isAuthenticated()) res.redirect("/admin/login")
+    conectarDB();
+    await Comentario.find({}).then((comentarios) => {
         res.render("admin/comentarios", { comentarios });
     });
-    res.redirect("admin/login");
+
+});
+router.get("/delete/:id", async(req, res) => {
+    if (!req.isAuthenticated()) res.redirect("/admin/login")
+    const { id } = req.params;
+    conectarDB();
+    await Comentario.deleteMany({ _id: id }).then((comentarios) => {
+        res.redirect("/admin/comentarios");
+    });
 });
 module.exports = router;

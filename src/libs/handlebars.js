@@ -1,5 +1,6 @@
  const { format, register } = require('timeago.js');
- const Handlebars = require("handlebars");
+ const Handlebars = require('handlebars')
+
  register('es_ES', (number, index, total_sec) => [
      ['justo ahora', 'ahora mismo'],
      ['hace %s segundos', 'en %s segundos'],
@@ -21,7 +22,8 @@
  helpers.timeago = (timestamp) => {
      return format(timestamp, "es_ES");
  }
+
  Handlebars.registerHelper('isEqual', (estaLogueado, opts) => {
-    return estaLogueado == true ? opts.fn(this) : opts.inverse(this);
-});
+     return estaLogueado == true ? opts.fn(this) : opts.inverse(this);
+ });
  module.exports = helpers;

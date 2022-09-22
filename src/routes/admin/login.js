@@ -3,15 +3,13 @@ const router = Router();
 const passport = require('passport');
 
 
-router.get("/", (req, res, next) => {
-    if (req.isAuthenticated()) return next();
-    res.render("admin/login");
-}, (req, res) => {
-    res.render("admin/addTematica", {});
+router.get("/", (req, res) => {
+    if (!req.isAuthenticated()) res.render("admin/login")
+    else res.header(200).redirect("/admin/panel");
 });
 
 router.post("/", passport.authenticate('local', {
-    successRedirect: "/",
+    successRedirect: "/admin/panel",
     failureRedirect: "/admin/login"
 }));
 

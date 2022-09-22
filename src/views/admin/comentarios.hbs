@@ -1,34 +1,22 @@
 {{>navbarAdmin}}
-{{#each comentarios}}
-      <div class="comentario">
-        
-        <h2 class="">
-          Anonimo
-        </h2>
-        <div class="tematicas__content">
-          <p class="tematicas__descripcion">{{comentario}}</p>
-          <p class="tematicas__descripcion">{{timeago fecha}}</p>
-          <p class="tematicas__descripcion">{{calificacion}}</p>
-        </div>
-      </div>
-      <div class="comment">
-		<div class="user-banner">
-			<div class="user">
-				<div class="avatar">
-					<img src="https://randomuser.me/api/portraits/men/86.jpg">
-					<span class="stat grey"></span>
-				</div>
-				<h5>Anonimo</h5>
+
+<main class="form-main">
+	<h2 class=" section__titulo">Comentarios</h2>
+	<div class="comentarios-container">
+		{{#each comentarios}}
+		<div class="comentario">
+			<div class="comentario__cabecera">
+				<span class="resaltar">Anónimo</span>
+				<span class="gris">{{timeago fecha}}
+				</span>
+					<a class="trash"href="/admin/comentarios/delete/{{{_id}}}"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="var(--colorPrincipal);transform: ;msFilter:;"><path d="M6 7H5v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7H6zm4 12H8v-9h2v9zm6 0h-2v-9h2v9zm.618-15L15 2H9L7.382 4H3v2h18V4z"></path></svg></a>
 			</div>
-			<button class="btn dropdown"><i class="ri-more-line"></i></button>
+			<p class="comentario__contenido">
+				{{comentario}}
+			</p>
+				<span class="calificacion">Calificacion:{{calificacion}}</span>
+
 		</div>
-		<div class="content">
-			<p>Actually, now that I try out the links on my message, above, none of them take me to the secure site. Only my shortcut on my desktop, which I created years ago.</p>
-		</div>
-		<div class="footer">
-			<span class="is-mute">{{calificacion}}</span>
-			<div class="divider"></div>
-			<span class="is-mute">{{calificacion}}</span>
-		</div>
+		{{/each}}
 	</div>
-      {{/each}}
+</main>

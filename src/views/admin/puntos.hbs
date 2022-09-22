@@ -1,0 +1,90 @@
+{{>navbarAdmin}}
+<div class="fondoAdd">
+    <div
+        class=" add form-main block mx-auto my-12 p-8 bg-white w-1/3 border border-gray-200 rounded-lg shadow-lg text-gray-800">
+        <h1 class="text-3xl font-bold text-center">Añadir Punto</h1>
+        <form action="/admin/puntos/edit" method="post" class="mt-4">
+            <label for="nombre" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
+                Nombre</label>
+            <input require id="nombre"
+                class="border border-gray-200 w-full text-lg placeholder-gray-500 p-2 my-2 bg-gray-200 focus:bg-white"
+                placeholder="nombre" required type="text" name="nombre" />
+              <label for="select" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
+                Orden</label>
+                   <select id="select" require name="orden" >
+                    {{#each maxOrden}}
+                        <option value="{{this}}">{{this}}</option>
+                    {{/each}}
+
+                   </select>
+              
+                </select>
+
+            <label for="message1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
+                Descripcion de objeto</label>
+            <textarea name="descripcionDeObjeto" id="message1" rows="4"
+                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Descripcion de objeto..."></textarea>
+            <label for="message2" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
+                Descripcion de ciego</label>
+            <textarea name="descripcionDeCiego" id="message2" rows="4"
+                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Descripcion de ciego..."></textarea>
+            <label for="message3" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
+                Descripcion de problema</label>
+            <textarea name="descripcionDeProblema" id="message3" rows="4"
+                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Descripcion de problema..."></textarea>
+            <label for="message4" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
+                Descripcion de historia</label>
+            <textarea name="descripcionDeHistoria" id="message4" rows="4"
+                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Descripcion de historia..."></textarea>
+            <input require
+                class="border border-gray-200 w-full text-lg placeholder-gray-500 p-2 my-2 bg-gray-200 focus:bg-white"
+                type="submit" value="Enviar">
+        </form>
+        <button id="cerrarAdd"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
+                <path
+                    d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z">
+                </path>
+            </svg>
+        </button>
+
+    </div>
+
+</div>
+<main class="form-main">
+    <h2 class="section__titulo">Puntos inteligentes</h2>
+    <section class="tematicas puntos-modificador">
+
+        {{#each puntos}}
+            <div class="tematicas__tematica">
+
+                <h2 class=" tematicas__titulo">
+                    {{nombre}}
+                </h2>
+                <div class="tematicas__content">
+                    <h2  >Orden: {{orden}}</h2>
+                    <h2>Descripcion de objeto</h2>
+                    <p class="tematicas__descripcion">{{descripcionDeObjeto}}</p>
+                    <h2>Descripcion de ciego</h2>
+                    <p class="tematicas__descripcion">{{descripcionDeCiego}}</p>
+                    <h2>Descripcion de problema</h2>
+                    <p class="tematicas__descripcion">{{descripcionDeProblema}}</p>
+                    <h2>Descripcion de historia</h2>
+                    <p class="tematicas__descripcion">{{descripcionDeHistoria}}</p>
+                </div>
+
+                <div class="admin-options">
+                    <a href="/admin/puntos/delete/{{{_id}}}">Borrar</a>
+                    <a href="/admin/puntos/edit/{{{_id}}}">Editar</a>
+                </div>
+            </div>
+        {{/each}}
+    </section>
+</main>
+<button class="botonAñadir" id="btnAñadir">Añadir</button>
+
+<script src="/js/file.js"></script>

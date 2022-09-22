@@ -3,7 +3,8 @@ const router = Router();
 const passport = require('passport');
 
 router.get("/", function(req, res) {
-    res.redirect("/admin/addPunto");
+    if (!req.isAuthenticated()) res.render("admin/login")
+    res.render("admin/panel");
 });
 
 router.post("/login", passport.authenticate('local', {

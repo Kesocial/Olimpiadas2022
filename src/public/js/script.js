@@ -3,11 +3,7 @@ const limpiarNav = (element) => {
         e.classList.remove("active");
     })
 }
-
-
-
 const navliAdmin = document.querySelectorAll("#ulAdmin > .nav-item");
-
 
 
 if (!navliAdmin) {
