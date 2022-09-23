@@ -7,8 +7,4 @@ window.addEventListener("unload", () => {
     cargaContainer.classList.remove('active');
 });
 
-window.addEventListener("load", function() {
-    setTimeout(function() {
-        window.scrollTo(0, 1);
-    }, 0);
-});
+window.scrollTo(0, 1);

@@ -636,7 +636,7 @@ html {
 
 .tematicas__descripcion {
     text-align: center;
-    word-break: break-all;
+    word-break: break-word;
     color: var(--colorSecundario);
 }
 
