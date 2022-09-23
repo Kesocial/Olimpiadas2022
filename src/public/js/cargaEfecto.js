@@ -7,4 +7,4 @@ window.addEventListener("unload", () => {
     cargaContainer.classList.remove('active');
 });
 
-window.scrollTo(0, 1);
+window.addEventListener("load", () => { window.scrollTo(0, 1); });
