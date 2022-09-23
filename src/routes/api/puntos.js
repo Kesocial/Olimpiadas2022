@@ -2,8 +2,8 @@ const { Router } = require("express");
 const router = Router();
 const Punto = require("../../models/Punto");
 const { conectarDB, desconectarDB } = require("../../mongoDb");
-conectarDB();
 router.get("/", function(req, res) {
+    conectarDB();
     const orden = req.query.orden
     Punto.find({ orden: orden }).then(punto => {
         res.json(punto[0]);
@@ -12,7 +12,7 @@ router.get("/", function(req, res) {
 
 });
 router.post("/add", (req, res) => {
-    const { nombre, orden, descripcionDeObjeto, descripcionDeCiego, descripcionDeProblema, descripcionDeHistoria } = req.body;
+    conectarDB();
     console.log(req.body);
     const newPunto = new Punto({
         nombre,

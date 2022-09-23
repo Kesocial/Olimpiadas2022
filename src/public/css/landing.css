@@ -345,6 +345,9 @@ html {
     .comentarios-container {
         grid-template-columns: repeat(2, minmax( 250px, 300px))!important;
     }
+    #parallax {
+        min-height: calc(100vh - 146px)!important;
+    }
 }
 
 @media screen and (max-width: 660px) {
@@ -648,6 +651,10 @@ html {
     display: block;
     width: 100%;
     padding: 5px;
+}
+
+.seccion__boton.descarga .nav__a {
+    padding: 0!important;
 }
 
 .fondoAdd>.form-main {
