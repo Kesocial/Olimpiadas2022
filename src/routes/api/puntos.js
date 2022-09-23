@@ -26,12 +26,11 @@ router.post("/add", (req, res) => {
         .save()
         .then((result) => {
             console.log(result);
+            res.json(result);
         })
         .catch((err) => {
             console.error(err);
         });
-
-    res.redirect("/admin/puntos");
 });
 
 module.exports = router;

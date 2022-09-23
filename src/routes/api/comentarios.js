@@ -21,7 +21,7 @@ router.post("/", (req, res) => {
         .save()
         .then((result) => {
             console.log(result);
-res.json(result);
+            res.json(result);
         })
         .catch((err) => {
             console.error(err);
