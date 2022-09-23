@@ -642,7 +642,6 @@ html {
 
 .seccion__boton.descarga.login {
     color: var(--colorSecundario)!important;
-    padding: 0!important;
 }
 
 .seccion__boton.descarga.login .nav__a {
