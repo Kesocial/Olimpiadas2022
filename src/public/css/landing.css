@@ -954,3 +954,15 @@ input[type="submit"]:hover {
 .puntos-modificador .tematicas__tematica {
     min-height: 0!important;
 }
+
+.nav__ul>.nav__li {
+    padding: 0px!important;
+}
+
+.nav__a {
+    display: flex;
+    height: calc(100% - 10px);
+    place-items: center;
+    place-content: center;
+    padding: 5px;
+}
