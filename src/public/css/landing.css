@@ -914,12 +914,14 @@ input[type="submit"]:hover {
 
 @media screen and (min-width: 1150px) {
     .comentarios-container {
-        grid-template-columns: repeat(4, minmax( 250px, 300px))!important;
+        grid-template-columns: repeat(4, minmax( 250px, 300px));
     }
 }
 
-.main__section#parallax {
-    min-height: calc(100vh - 114px)!important;
+@media screen and (max-width: 1150px) {
+    .main__section#parallax {
+        min-height: calc(100vh - 114px);
+    }
 }
 
 @media screen and (max-width: 750px) {
@@ -960,8 +962,8 @@ input[type="submit"]:hover {
     .comentarios-container {
         grid-template-columns: repeat(2, minmax( 250px, 300px))!important;
     }
-    #parallax {
-        min-height: calc(100vh - 146px)!important;
+    .main__section#parallax {
+        min-height: calc(100vh - 148px);
     }
 }
 
